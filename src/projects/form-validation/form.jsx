@@ -64,6 +64,7 @@ export default function Form(){
     const present = useRef(null)
 
     const [isValid, setIsValid] = useState(true)
+    const [isSubmitted, setIsSubmitted] = useState(false)
 
     const [formData, setFormData] = useState({name:'', email:'', pwd:'', gender:'', interests:[], country:'', present:''})
     const [formErr, setFormErr] = useState({name:'', email:'', pwd:'', gender:'', interests:'', country:'', present:''})
@@ -92,20 +93,21 @@ export default function Form(){
             present: (present.current?.value || '').trim()
         }
 
-        setFormErr( {
-            name: /^[A-Z]{1}[a-z]{2,}\s[A-Z]{1}[a-z]{2,}$/.test(values.name) ? '' : 'Invalid value',
-            email: /^[A-Za-z0-9]{2,}@[A-Za-z]{4,}\.[a-z]{2,3}$/.test(values.email) ? '' : 'Invalid value',
-            pwd: /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/.test(values.pwd) ? '' : 'Invalid value',
-            gender: values.gender !== '' ? '' : 'Invalid value',
-            interests: (Array.isArray(values.interests) && values.interests.length > 0) ? '' : 'Invalid value',
-            country: values.country !== '' ? '' : 'Invalid value',
-            present: values.present !== '' ? '' : 'Invalid value'
-        })
-        const validNow = Object.values(formErr).every(v => v === '')
-        setFormErr(formErr)
+        const errors = {
+            name: /^[A-Z]{1}[a-z]{2,}\s[A-Z]{1}[a-z]{2,}$/.test(values.name) ? '' : 'Invalid name',
+            email: /^[A-Za-z0-9]{2,}@[A-Za-z]{4,}\.[a-z]{2,3}$/.test(values.email) ? '' : 'Invalid email',
+            pwd: /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/.test(values.pwd) ? '' : 'Password must contain at least one Capital character, a number and a special character, and contain at least eight characters',
+            gender: values.gender !== '' ? '' : 'Select your gender',
+            interests: (Array.isArray(values.interests) && values.interests.length > 0) ? '' : 'Select at least one of the interests',
+            country: values.country !== '' ? '' : 'Select your country',
+            present: values.present !== '' ? '' : "this field can't be empty"
+        }
+        const validNow = Object.values(errors).every(v => v === '')
+        setFormErr(errors)
         setIsValid(validNow)
         if(isValid){
             setFormData(values)
+            setIsSubmitted(true)
         }
     }
     
@@ -213,10 +215,10 @@ export default function Form(){
             <span className='error-span' id='present-err'>{formErr.present}</span>
             <input type="submit" value="Submit"/>
         </form>
-        <div className="personal-info">
+        {isSubmitted&&<div className="personal-info">
             <h1>Personal information</h1>
                 <Render formData={formData}/>
-        </div>
+        </div>}
                 
         </div>
     )
