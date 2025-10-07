@@ -1,4 +1,4 @@
-import Main from "./projects/form-validation/main"
+import Main from "./projects/student-management/main"
 
 function App() {
   return(
