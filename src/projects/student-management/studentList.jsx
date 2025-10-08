@@ -33,8 +33,8 @@ export default function StudentList(){
                             <td>{s.postalCode}</td>
                             <td>{s.average}</td>
                             <td className="actions">
-                                <button className="edit-btn"><Link to={`/edit-student/${s.id}`}>Edit</Link></button>
-                                <button className="remove-btn" onClick={()=>removeStudent(s.id)}>Remove</button>
+                                <button className="edit-btn" style={{backgroundColor:'teal'}}><Link to={`/edit-student/${s.id}`} style={{color:'white'}}>Edit</Link></button>
+                                <button className="remove-btn" style={{backgroundColor:'crimson'}} onClick={()=>removeStudent(s.id)}>Remove</button>
                             </td>
                         </tr>
                     ))}
