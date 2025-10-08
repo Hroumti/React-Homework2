@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "regNum": 1356,
+    "name": "Dupont Jean",
+    "postalCode": "75001",
+    "city": "Paris",
+    "average": 15.2
+  },
+  {
+    "id": 2,
+    "regNum": 4598,
+    "name": "Martin Sophie",
+    "postalCode": "69007",
+    "city": "Lyon",
+    "average": 12.8
+  },
+  {
+    "id": 3,
+    "regNum": 4091,
+    "name": "Petit Thomas",
+    "postalCode": "13002",
+    "city": "Marseille",
+    "average": 17.5
+  },
+  {
+    "id": 4,
+    "regNum": 2908,
+    "name": "Lefebvre Anna",
+    "postalCode": "33000",
+    "city": "Bordeaux",
+    "average": 10.1
+  },
+  {
+    "id": 5,
+    "regNum": 3467,
+    "name": "Leroy Paul",
+    "postalCode": "31000",
+    "city": "Toulouse",
+    "average": 14.9
+  },
+  {
+    "id": 6,
+    "regNum": 3217,
+    "name": "Roux Camille",
+    "postalCode": "59000",
+    "city": "Lille",
+    "average": 16.3
+  },
+  {
+    "id": 7,
+    "regNum": 1563,
+    "name": "Fournier Marc",
+    "postalCode": "44000",
+    "city": "Nantes",
+    "average": 9.5
+  },
+  {
+    "id": 8,
+    "regNum": 1856,
+    "name": "Moreau Alice",
+    "postalCode": "67000",
+    "city": "Strasbourg",
+    "average": 13.7
+  },
+  {
+    "id": 9,
+    "regNum": 3456,
+    "name": "Simon Nicolas",
+    "postalCode": "06000",
+    "city": "Nice",
+    "average": 11.4
+  },
+  {
+    "id": 10,
+    "regNum": 4444,
+    "name": "Laurent Julie",
+    "postalCode": "34000",
+    "city": "Montpellier",
+    "average": 18.0
+  }
+]

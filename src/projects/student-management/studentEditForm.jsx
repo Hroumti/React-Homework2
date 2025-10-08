@@ -1,11 +1,11 @@
-import {useContext, useRef, useMemo} from 'react'
+import {useContext, useRef, useEffect} from 'react'
 import StudentContext from './studentContext'
 import { useParams } from 'react-router-dom'
 
 export default function StudentEditForm(){
     const {students, updateStudent} = useContext(StudentContext)
     const {id} = useParams()
-    const numericId = useMemo(()=> Number(id), [id])
+    const numericId = Number(id)
     const student = students.find(s=>s.id===numericId) || {}
 
     const regNum = useRef(student.regNum)
@@ -13,6 +13,14 @@ export default function StudentEditForm(){
     const city = useRef(student.city)
     const postalCode = useRef(student.postalCode)
     const average = useRef(student.average)
+
+    useEffect(()=>{
+        if(regNum.current) regNum.current.value = student.regNum ?? ''
+        if(name.current) name.current.value = student.name ?? ''
+        if(city.current) city.current.value = student.city ?? ''
+        if(postalCode.current) postalCode.current.value = student.postalCode ?? ''
+        if(average.current) average.current.value = student.average ?? ''
+    }, [])
 
     function handleSubmit(e){
         e.preventDefault()

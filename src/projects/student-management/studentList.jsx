@@ -3,7 +3,7 @@ import StudentContext from './studentContext'
 import {Link} from 'react-router-dom'
 
 export default function StudentList(){
-    const {search, filteredStudents, removeStudent} = useContext(StudentContext)
+    const {search, filteredStudents, removeStudent, students} = useContext(StudentContext)
     
     
     return(
@@ -40,6 +40,13 @@ export default function StudentList(){
                     ))}
                 </tbody>
             </table>
+            <div className="stats">
+                <p>Highest average: <span>{Math.max(...students.map(s=>s.average))}</span></p>
+                <p>Lowest average: <span>{Math.min(...students.map(s=>s.average))}</span></p>
+                <p>Class average: <span>{(students.reduce((acc, s)=>acc+s.average, 0)/students.length).toFixed(2)}</span></p>
+
+
+            </div>
         </div>
     )
 }

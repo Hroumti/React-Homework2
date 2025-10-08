@@ -18,6 +18,12 @@ export default function StudentAddForm(){
             postalCode: Number(postalCode.current.value),
             average: Number(average.current.value)
         })
+        
+        if(regNum.current) regNum.current.value = ''
+        if(name.current) name.current.value = ''
+        if(city.current) city.current.value = ''
+        if(postalCode.current) postalCode.current.value = ''
+        if(average.current) average.current.value = ''
     }
 
 

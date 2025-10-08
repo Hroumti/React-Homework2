@@ -6,6 +6,7 @@ export function StudentProvider({children}){
     const [students, setStudents] = useState([])
     const [currId, setCurrId] = useState(0)
     const [filteredStudents, setFilteredStudents] = useState([])
+    const [searchTerm, setSearchTerm] = useState('')
 
     useEffect(()=>{
         fetch('/students.json')
@@ -20,30 +21,34 @@ export function StudentProvider({children}){
     }, [])
 
     function addStudent(student){
-        setStudents([...students, {...student, id:currId}])
-        setCurrId(currId+1)
-        setFilteredStudents(students)
+        const nextStudents = [...students, {...student, id: currId}]
+        setStudents(nextStudents)
+        setCurrId(currId + 1)
         alert(`Student info have been added successfully`)
     }
 
     function updateStudent(student){
-        setStudents(students.map(s=>s.id===student.id?student:s))
-        setFilteredStudents(students)
+        const nextStudents = students.map(s=> s.id === student.id ? student : s)
+        setStudents(nextStudents)
         alert(`Student info have been updated successfully`)
-
     }
 
     function removeStudent(id){
-        setStudents(students.filter(s=>s.id!==id))
-        setFilteredStudents(students)
+        const nextStudents = students.filter(s=> s.id !== id)
+        setStudents(nextStudents)
         alert(`Student info have been removed successfully`)
-
     }
 
     function search(searchInput){
-        const term = (searchInput||'').toString().toLowerCase()
-        setFilteredStudents(students.filter(s=> (s.name||'').toLowerCase().includes(term)))
+        const term = (searchInput || '').toString().toLowerCase()
+        setSearchTerm(term)
     }
+
+    useEffect(()=>{
+        const term = searchTerm
+        const nextFiltered = students.filter(s => (s.name || '').toLowerCase().includes(term))
+        setFilteredStudents(nextFiltered)
+    }, [students, searchTerm])
 
     return (
         <StudentContext.Provider value={{students, filteredStudents, addStudent, updateStudent, removeStudent, search}}>
