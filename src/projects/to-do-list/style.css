@@ -1,0 +1,166 @@
+/* Variables for easy theme adjustments */
+:root {
+    --primary-color: #007bff; /* Blue for primary actions/text */
+    --secondary-color: #6c757d; /* Gray for text/borders */
+    --background-color: #f8f9fa; /* Light background */
+    --white-color: #ffffff;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.15);
+    --edit-color: #ffc107; /* Yellow/Amber for edit */
+    --remove-color: #dc3545; /* Red for remove */
+}
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+#root {
+    width: 100%;
+    max-width: 600px; /* Max width for the app container */
+    padding: 20px;
+}
+
+/* --- Form and Header Styles --- */
+#form {
+    background: var(--white-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    margin-bottom: 30px;
+    transition: box-shadow 0.3s ease;
+}
+
+#form:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.form-container {
+    display: flex;
+    gap: 10px;
+}
+
+#task-input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#task-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+#submit-btn {
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#submit-btn:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+#submit-btn:active {
+    transform: translateY(1px);
+}
+
+/* --- Task List Styles (Render Component) --- */
+.tasksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h2 {
+    text-align: center;
+    color: var(--secondary-color);
+    padding: 20px;
+    background: var(--white-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+}
+
+.task-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white-color);
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    transition: box-shadow 0.3s ease;
+}
+
+.task-container:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.task {
+    flex-grow: 1;
+    margin: 0;
+    font-size: 1.1em;
+    color: #343a40; /* Darker text */
+    word-break: break-word; /* Ensure long tasks wrap */
+    padding-right: 10px;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Base button style for actions */
+.actions button {
+    background: transparent;
+    border: 2px solid transparent; /* Base transparent border */
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 5px 8px;
+    line-height: 1;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.actions button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* --- Specific Button Hover Effects --- */
+
+/* Edit Button Hover (Yellow Border) */
+.edit-btn:hover {
+    border-color: var(--edit-color);
+}
+
+/* Remove Button Hover (Red Border) */
+.remove-btn:hover {
+    border-color: var(--remove-color);
+}

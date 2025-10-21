@@ -1,4 +1,4 @@
-import Main from "./projects/student-management/main"
+import Main from "./projects/to-do-list/main"
 
 function App() {
   return(
