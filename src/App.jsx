@@ -1,4 +1,4 @@
-import Main from "./projects/to-do-list/main"
+import Main from "./projects/nutriCalc/main"
 
 function App() {
   return(

@@ -13,7 +13,7 @@
 /* Global Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--background-color);
+    background: linear-gradient(135deg, #f8f9fa, rgb(236, 249, 255));
     margin: 0;
     padding: 0;
     display: flex;
@@ -147,6 +147,7 @@ h2 {
     padding: 5px 8px;
     line-height: 1;
     transition: border-color 0.3s ease, background-color 0.3s ease;
+    aspect-ratio: 1/1;
 }
 
 .actions button:focus {

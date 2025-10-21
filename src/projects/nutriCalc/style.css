@@ -1,0 +1,266 @@
+/* Variables for easy theme adjustments */
+:root {
+    --primary-color: #007bff; /* Blue for primary actions/text */
+    --secondary-color: #6c757d; /* Gray for borders/secondary text */
+    --background-color: #f4f7f9; /* Very light, modern background */
+    --white-color: #ffffff;
+    --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --success-color: #28a745; /* Green for good progress */
+    --warning-color: #ffc107; /* Yellow for attention */
+    --danger-color: #dc3545; /* Red for exceeded limit/removal */
+}
+
+/* --- Global and Main Layout --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 15px 5px;
+    font-size: 14px;
+}
+
+#root {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* --- Meals Component Styles --- */
+.meals-container {
+    padding: 12px;
+    background: var(--white-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+}
+
+.meals-container h1 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+.meal-container {
+    background: var(--background-color);
+    border: 1px solid #e9ecef;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.meal-container h3 {
+    color: #343a40;
+    margin-top: 0;
+    margin-bottom: 3px;
+    font-size: 1.1em;
+}
+
+.meal-container p {
+    color: var(--secondary-color);
+    font-size: 0.8em;
+    margin-bottom: 8px;
+}
+
+.quantity-form {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.quantity-form input[type="number"] {
+    flex-grow: 1;
+    padding: 6px 8px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.quantity-form input[type="submit"] {
+    background-color: var(--success-color);
+    color: var(--white-color);
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.85em;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-form input[type="submit"]:hover {
+    background-color: #1e7e34;
+}
+
+/* --- Stats Component Styles --- */
+.stats-container {
+    background: var(--white-color);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+}
+
+.stats-container h2 {
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.added-meals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.added-meal-item {
+    background: var(--background-color);
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.added-meal-item h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1em;
+}
+
+.meal-info p {
+    margin: 3px 0;
+    font-size: 0.8em;
+    color: #555;
+}
+
+.added-meal-item .remove-btn {
+    align-self: flex-start;
+    background-color: var(--danger-color);
+    color: var(--white-color);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.8em;
+    margin-top: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.added-meal-item .remove-btn:hover {
+    background-color: #c82333;
+}
+
+.values-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.progress-section {
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.progress-section h4 {
+    color: #343a40;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed var(--secondary-color);
+    padding-bottom: 5px;
+    font-size: 1em;
+}
+
+.progress-item {
+    margin-bottom: 8px;
+}
+
+.progress-item label {
+    display: block;
+    margin-bottom: 3px;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.85em;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--success-color);
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Overriding Progress Fill colors for progress-section for simple look */
+.progress-section .progress-fill {
+    /* Set color dynamically in JSX based on threshold if needed, 
+       but keeping it simple green for a clean look here */
+    background-color: var(--primary-color); 
+}
+
+
+/* --- Progress Bar Styles (from your existing code) --- */
+.progress-bar-container {
+    /* Inherited styles for consistency */
+    background: var(--white-color); /* Overriding f8f9fa to white for distinction */
+    border: 1px solid #e9ecef;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.loading-fill.normal {
+    /* Using main colors */
+    background: linear-gradient(90deg, var(--success-color), #66BB6A);
+}
+
+.loading-fill.exceeded {
+    /* Using main colors */
+    background: linear-gradient(90deg, var(--danger-color), #ff6666);
+}
+
+.exceeded-text {
+    color: var(--danger-color);
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* --- Responsive Design --- */
+@media (min-width: 992px) {
+    #root {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr; /* Meals on left, Stats on right */
+        gap: 15px;
+    }
+
+    .meals-container {
+        padding: 15px;
+    }
+    
+    .stats-container {
+        padding: 15px;
+    }
+}
