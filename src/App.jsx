@@ -1,4 +1,4 @@
-import Main from "./projects/nutriCalc/main"
+import Main from "./projects/step-tracker/main"
 
 function App() {
   return(
