@@ -115,11 +115,12 @@ h2 {
     padding: 15px 20px;
     border-radius: 12px;
     box-shadow: var(--shadow-light);
-    transition: box-shadow 0.3s ease;
+    transition:  0.3s ease-in-out;
 }
 
 .task-container:hover {
     box-shadow: var(--shadow-hover);
+    transform: scaleX(1.1);
 }
 
 .task {
