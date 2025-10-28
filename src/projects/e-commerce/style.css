@@ -1,0 +1,225 @@
+/* style.css */
+
+/* Global Body Styles (Dark Theme) */
+body {
+    background-color: #1a1a1a; /* Dark background */
+    color: #f0f0f0; /* Light text color */
+    min-height: 100vh;
+    padding-top: 56px; /* Space for the fixed navbar */
+}
+
+/* ------------------------------------ */
+/* Navbar Styling */
+/* ------------------------------------ */
+.navbar {
+    background-color: #2c2c2c !important; /* Slightly lighter dark background for navbar */
+    border-bottom: 1px solid #333;
+    position: fixed; /* Fix the navbar to the top */
+    top: 0;
+    width: 100%;
+    z-index: 1030; /* Ensure it stays above other content */
+}
+
+.navbar-brand,
+.nav-link {
+    color: #f0f0f0 !important;
+}
+
+.nav-link:hover {
+    color: rgb(213, 43, 251) !important; /* Accent on hover */
+}
+
+/* Override Bootstrap's primary color with the accent */
+.navbar-brand {
+    font-weight: bold;
+    color: rgb(213, 43, 251) !important;
+}
+
+
+/* ------------------------------------ */
+/* Layout and Centering */
+/* ------------------------------------ */
+.container,
+.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Center content within the main container for forms and lists */
+.container {
+    max-width: 800px; /* Limit width for centered content */
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px; /* Extra padding after the navbar */
+}
+
+
+/* ------------------------------------ */
+/* Card and Form Styling (FomEmp) */
+/* ------------------------------------ */
+.card {
+    background-color: #2c2c2c; /* Card background */
+    border: 1px solid #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.form-label {
+    color: #ccc;
+    font-weight: 500;
+}
+
+.form-control {
+    background-color: #383838;
+    color: #f0f0f0;
+    border: 1px solid #555;
+}
+
+.form-control:focus {
+    background-color: #383838;
+    color: #f0f0f0;
+    border-color: rgb(213, 43, 251);
+    box-shadow: 0 0 0 0.25rem rgba(213, 43, 251, 0.25);
+}
+
+
+/* ------------------------------------ */
+/* Button Overrides (Accent Color) */
+/* ------------------------------------ */
+.btn-primary {
+    background-color: rgb(213, 43, 251); /* Accent color */
+    border-color: rgb(213, 43, 251);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: rgb(180, 30, 220); /* Slightly darker accent on hover/focus */
+    border-color: rgb(180, 30, 220);
+}
+
+/* ------------------------------------ */
+/* Table Styling (ListEmp) */
+/* ------------------------------------ */
+.table {
+    border: 1px solid #444;
+}
+
+.table-dark th {
+    background-color: rgb(213, 43, 251); /* Accent color for header background */
+    border-color: rgb(180, 30, 220);
+    color: white;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: #2c2c2c; /* Odd rows background */
+}
+
+.table-striped > tbody > tr:nth-of-type(even) > * {
+    background-color: #333333; /* Even rows background */
+}
+
+.table-bordered > :not(caption) > * > * {
+    border-color: #444;
+}
+
+/* Employee Image Styling */
+.table img {
+    border-radius: 50%;
+    border: 2px solid #555;
+}
+
+
+
+
+.navbar-container {
+    background-color: #2c2c2c; /* same as .navbar */
+    border-bottom: 1px solid #333;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1030;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 8px 15px;
+}
+
+.brand {
+    font-weight: bold;
+    color: rgb(213, 43, 251);
+    margin: 0;
+}
+.brand a { color: inherit; text-decoration: none; }
+
+.link-span a {
+    color: #f0f0f0;
+    margin-left: 16px;
+    text-decoration: none;
+}
+.link-span a:hover {
+    color: rgb(213, 43, 251);
+}
+
+/* Basic e-commerce layout helpers */
+.render-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+}
+.render-card-container {
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26%;
+}
+.render-card-container:hover{
+    box-shadow: 0 8px 16px rgba(213, 43, 251, 0.4);
+    transform: scale(1.05);
+}
+.add-btn, .quantity-btn, .remove-btn {
+    background-color: rgb(213, 43, 251);
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.add-btn:hover, .quantity-btn:hover, .remove-btn:hover {
+    background-color: rgb(180, 30, 220);
+    transform: scale(1.1) translateY(-5px);
+}
+
+.total-items-count{
+    background-color: rgb(180, 30, 220);
+    padding-inline:5px;
+    border-radius: 4px;
+    color: white !important;
+}
+
+.quantity-btn{
+    margin-inline: 10px;
+}
+.cart-container { padding: 16px; width: 100%;}
+.cart-table { width: 100%; border-collapse: collapse; }
+.cart-table td { padding: 8px; border-bottom: 1px solid #444; }
+.total { margin-top: 12px; font-weight: bold; }
+
+main{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 20px;
+}
+
+
+#root{
+    height: 100vh;
+    width: 100vw;
+}
