@@ -1,4 +1,4 @@
-import Main from "./projects/e-commerce/main"
+import Main from "./projects/shop/main"
 function App() {
   return(
     <Main/>
